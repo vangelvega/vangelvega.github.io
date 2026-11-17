@@ -23,22 +23,35 @@
   var ticking=false;
   window.addEventListener("scroll",function(){if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;spy()})}},{passive:true});
 
+  // Playground title: ink by default. It takes its colours and hops on hover, and for a moment on arrival from the tab
+  var plTitle=document.querySelector(".pl-title"), plTimer;
+  function hopTitle(arrive){
+    if(!plTitle)return;
+    if(arrive){plTitle.classList.add("lit");clearTimeout(plTimer);plTimer=setTimeout(function(){plTitle.classList.remove("lit")},2600)}
+    if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+    plTitle.classList.remove("hop");void plTitle.offsetWidth;plTitle.classList.add("hop");
+  }
+  if(plTitle)plTitle.parentNode.addEventListener("mouseenter",function(){hopTitle(false)});
   var baseTitle=document.title, current=null;
   function show(){
     var h=(location.hash||"#home").slice(1), v=h, target=null, prev=current;
     if(h.indexOf("flowops-")===0){v="flowops";target=h}
+    // #playground is a section of the home view with its own tab in the bar
+    var navKey=null;if(h==="playground"){v="home";target="playground";navKey="playground"}
     if(views.indexOf(v)<0)v="home";
     current=v;
     var view=document.getElementById("view-"+v);
     views.forEach(function(n){document.getElementById("view-"+n).hidden=(n!==v)});
     document.getElementById("site-footer").hidden=(v==="contact");
     document.querySelectorAll("[data-nav]").forEach(function(a){
-      var on=a.dataset.nav===v||(v==="flowops"&&a.dataset.nav==="home");
+      var on=navKey?a.dataset.nav===navKey:(a.dataset.nav===v||(v==="flowops"&&a.dataset.nav==="home"));
       if(on)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");
     });
     // Name the view in the tab, so history and screen readers know where they are
     document.title=v==="home"?baseTitle:view.getAttribute("aria-label")+" · Valentina Angel";
-    if(target){requestAnimationFrame(function(){jumpTo(target)})}
+    // A direct link to a section can land before images and fonts settle: jump again once the page has loaded
+    if(target&&document.readyState!=="complete")window.addEventListener("load",function(){if(location.hash.slice(1)===h)jumpTo(target)},{once:true});
+    if(target){requestAnimationFrame(function(){jumpTo(target);if(navKey){var ph=document.querySelector("#playground h2");if(ph){ph.setAttribute("tabindex","-1");ph.focus({preventScroll:true})}hopTitle(true)}})}
     else if(v==="home"&&prev==="flowops"){
       // Coming back from the case lands on its card, not the top of the page
       // Scroll synchronously so a view transition snapshots the right position
@@ -61,6 +74,8 @@
     else show();
   });
   show();
+  // Clicking the Playground tab again while already on #playground still scrolls to it
+  document.querySelectorAll(".playlink").forEach(function(a){a.addEventListener("click",function(e){if(location.hash==="#playground"){e.preventDefault();jumpTo("playground");hopTitle(true)}})});
 
   // Skip link: move focus to the visible view without touching the hash router
   var skip=document.querySelector(".skip");

@@ -375,3 +375,41 @@ p{margin:0}
 @media (max-width:899px){.proto-full{display:none!important}}
 .feature h3 a{color:inherit;text-decoration:none}
 .feature h3 a:hover{text-decoration:underline;text-decoration-thickness:.07em;text-underline-offset:.12em}
+.facts dd.bul{position:relative;padding-left:14px}
+.facts dd.bul::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;background:var(--accent)}
+
+/* Playground tab: the one place the bar breaks its single-accent rule. Letters take five colours and hop in turn. The section title carries the same colours. */
+:root{--pl1:#C93A12;--pl2:#2450C8;--pl3:#17734A;--pl4:#B31F72;--pl5:#6A3FC4}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--pl1:#FF6B3D;--pl2:#7FA6FF;--pl3:#5FD19A;--pl4:#FF7AC0;--pl5:#B79BFF}}
+:root[data-theme="dark"]{--pl1:#FF6B3D;--pl2:#7FA6FF;--pl3:#5FD19A;--pl4:#FF7AC0;--pl5:#B79BFF}
+.top .cells{grid-template-columns:minmax(0,1fr) repeat(4,minmax(84px,150px)) 52px 52px}
+.nav a.playlink{position:relative;overflow:hidden}
+.nav a.playlink:hover,.nav a.playlink[aria-current="page"]{color:var(--ink)}
+.pl{display:inline-flex}
+.pl i{font-style:normal;display:inline-block;transition:color .18s}
+.pl i:nth-child(5n+1){--c:var(--pl1)}.pl i:nth-child(5n+2){--c:var(--pl2)}.pl i:nth-child(5n+3){--c:var(--pl3)}.pl i:nth-child(5n+4){--c:var(--pl4)}.pl i:nth-child(5n){--c:var(--pl5)}
+.pl i:nth-child(1){--n:0}.pl i:nth-child(2){--n:1}.pl i:nth-child(3){--n:2}.pl i:nth-child(4){--n:3}.pl i:nth-child(5){--n:4}.pl i:nth-child(6){--n:5}.pl i:nth-child(7){--n:6}.pl i:nth-child(8){--n:7}.pl i:nth-child(9){--n:8}.pl i:nth-child(10){--n:9}
+.playlink::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.2,.8,.2,1);
+  background:linear-gradient(90deg,var(--pl1) 0 20%,var(--pl2) 20% 40%,var(--pl3) 40% 60%,var(--pl4) 60% 80%,var(--pl5) 80%)}
+.playlink:hover::after,.playlink:focus-visible::after,.playlink[aria-current="page"]::after{transform:scaleX(1)}
+.playlink:hover .pl i,.playlink:focus-visible .pl i,.playlink[aria-current="page"] .pl i{color:var(--c)}
+.playlink:hover .pl i,.playlink:focus-visible .pl i{animation:pl-hop .5s cubic-bezier(.3,.7,.3,1) both;animation-delay:calc(var(--n)*38ms)}
+@keyframes pl-hop{0%{transform:none}40%{transform:translateY(-4px) rotate(-7deg)}100%{transform:none}}
+@media (hover:none){.playlink .pl i{color:var(--c)}}
+@media (max-width:900px){.top .cells{grid-template-columns:minmax(0,1fr) repeat(4,auto) 52px 52px}}
+/* Phones: four tabs no longer fit beside the name, so the bar becomes two rows: name and settings, then the tabs */
+@media (max-width:720px){
+  .top .cells{grid-template-columns:minmax(0,1fr) 44px 44px}
+  .top nav{display:flex!important;grid-column:1/-1;grid-row:2;border-top:1px solid var(--line)}
+  .top nav>.cell{flex:1 1 auto;min-height:38px}
+  .top nav>.cell:first-child{border-left:0!important}
+  .top .cell.nav a{padding:11px 10px;white-space:nowrap}
+  .brand span:last-child{display:inline}
+}
+@media (max-width:350px){.top .cell.nav a{padding:11px 7px}.playlink .pl i:nth-child(n+5){display:none}}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+/* Section title: ink by default; takes the colours on hover and for a moment on arrival from the tab */
+#playground h2:hover .pl-title i,.pl-title.lit i{color:var(--c)}
+.pl-title i{transition:color .5s}
+.pl-title.hop i{animation:pl-hop-lg .6s cubic-bezier(.3,.7,.3,1) both;animation-delay:calc(var(--n)*45ms)}
+@keyframes pl-hop-lg{0%{transform:none}40%{transform:translateY(-.2em) rotate(-6deg)}100%{transform:none}}
