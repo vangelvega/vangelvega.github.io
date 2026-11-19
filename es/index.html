@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/site.css?v=20261118d">
 <link rel="alternate" hreflang="en" href="../">
 <link rel="alternate" hreflang="es" href="./">
 <script>try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
@@ -32,19 +32,24 @@
 <div class="frame">
 
 <header class="top band">
-  <div class="cells">
-    <div class="cell"><a class="brand" href="#home" aria-label="Valentina Angel, inicio"><span class="mark" aria-hidden="true">VA</span><span>Valentina Angel</span></a></div>
-    <nav aria-label="Principal" style="display:contents">
-      <div class="cell nav"><a href="#home" data-nav="home">Trabajo</a></div>
-      <div class="cell nav"><a href="#about" data-nav="about">Sobre mí</a></div>
-      <div class="cell nav"><a class="playlink" href="#playground" data-nav="playground" aria-label="Playground"><span class="pl" aria-hidden="true"><i>P</i><i>l</i><i>a</i><i>y</i><i>g</i><i>r</i><i>o</i><i>u</i><i>n</i><i>d</i></span></a></div>
-      <div class="cell nav"><a href="#contact" data-nav="contact">Contacto</a></div>
+  <div class="bar">
+    <a class="brand" href="#home" aria-label="Valentina Angel, inicio"><span class="mark" aria-hidden="true">VA</span><span>Valentina Angel</span></a>
+    <nav class="tabs" aria-label="Principal">
+      <a href="#home" data-nav="home">Trabajo</a>
+      <a href="#about" data-nav="about">Sobre mí</a>
+      <a class="playlink" href="#playground" data-nav="playground" aria-label="Playground"><span class="pl" aria-hidden="true"><i>P</i><i>l</i><i>a</i><i>y</i><i>g</i><i>r</i><i>o</i><i>u</i><i>n</i><i>d</i></span></a>
+      <a href="#contact" data-nav="contact">Contacto</a>
     </nav>
-    <div class="cell pref"><a href="../" hreflang="en" lang="en" data-lang-link aria-label="EN, view in English">EN</a></div>
-    <div class="cell pref"><button type="button" data-theme-toggle data-label-dark="Cambiar a modo oscuro" data-label-light="Cambiar a modo claro" aria-label="Cambiar a modo oscuro">
-      <svg class="i-moon" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M15.5 12.6A6.5 6.5 0 0 1 7.4 4.5a6.5 6.5 0 1 0 8.1 8.1Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-      <svg class="i-sun" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><circle cx="10" cy="10" r="3.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 1.5v2.2M10 16.3v2.2M1.5 10h2.2M16.3 10h2.2M4 4l1.6 1.6M14.4 14.4 16 16M4 16l1.6-1.6M14.4 5.6 16 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-    </button></div>
+    <div class="prefs">
+      <div class="lang" data-lang>
+        <button type="button" class="lang-btn" aria-expanded="false" aria-controls="lang-menu" aria-label="Idioma: español"><svg class="globe" viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="7.6"/><path d="M2.4 10h15.2M10 2.4c2.4 2.2 3.6 4.7 3.6 7.6s-1.2 5.4-3.6 7.6c-2.4-2.2-3.6-4.7-3.6-7.6S7.600 4.600 10 2.400Z"/></g></svg><span>ES</span><svg class="chev" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2.500 4.500 6 8l3.500-3.500" fill="none" stroke="currentColor" stroke-width="1.500" stroke-linecap="square"/></svg></button>
+        <ul class="lang-menu" id="lang-menu" hidden>
+          <li><span class="cur" aria-current="true"><b>ES</b><span class="name">Español</span><svg class="check" viewBox="0 0 14 14" width="12" height="12" aria-hidden="true"><path d="M2.500 7.400 5.600 10.500 11.500 4" fill="none" stroke="currentColor" stroke-width="1.600" stroke-linecap="square"/></svg></span></li>
+          <li><a href="../" hreflang="en" lang="en" data-lang-link><b>EN</b><span class="name">English</span></a></li>
+        </ul>
+      </div>
+      <button type="button" class="theme" role="switch" aria-checked="false" data-theme-toggle aria-label="Modo oscuro"><span class="th" aria-hidden="true"><span class="th-thumb"></span><svg class="ic-sun" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><circle cx="10" cy="10" r="3.500" fill="none" stroke="currentColor" stroke-width="1.500"/><path d="M10 1.500v2.200M10 16.300v2.200M1.500 10h2.200M16.300 10h2.200M4 4l1.600 1.600M14.400 14.400 16 16M4 16l1.600-1.600M14.400 5.600 16 4" stroke="currentColor" stroke-width="1.500" stroke-linecap="round"/></svg><svg class="ic-moon" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M15.500 12.600A6.500 6.500 0 0 1 7.400 4.500a6.500 6.500 0 1 0 8.100 8.100Z" fill="none" stroke="currentColor" stroke-width="1.500" stroke-linejoin="round"/></svg></span></button>
+    </div>
   </div>
 </header>
 
@@ -52,21 +57,12 @@
 
   <!-- HOME -->
   <section class="view" id="view-home" aria-label="Trabajo">
-    <div class="band strip">
-      <div class="cells">
-        <div class="cell label"><span class="idx">[00]</span> Índice</div>
-        <div class="cell label">Portafolio · 2026</div>
-        <div class="cell label">B2B · Sistemas complejos</div>
-        <div class="cell label">Bogotá · Remoto</div>
-      </div>
-    </div>
-
     <div class="band hero">
       <div class="cells">
         <div class="cell span-3 big"><h1>Product Designer</h1><p class="tagline">Diseño software que convierte <em>datos densos en decisiones</em>.</p></div>
         <div class="cell side">
-          <p class="lede">Seis años en proyectos de infraestructura (estaciones de metro, BRT y un aeropuerto internacional) me enseñaron cómo deciden quienes construyen infraestructura. Ahora diseño el software con el que deciden.</p>
-          <div class="status label"><i aria-hidden="true"></i><b>Disponible</b> · Remoto desde Bogotá</div>
+          <p class="lede">Seis años en proyectos de infraestructura (estaciones de metro, BRT y un aeropuerto internacional) me enseñaron cómo decide un equipo cuando la información es densa y un error sale caro. Ahora diseño software para decisiones así.</p>
+          <div class="status label"><i aria-hidden="true"></i><b>Disponible</b> · Remoto desde Bogotá o Madrid</div>
           <a class="btn solid" href="#contact">Escríbeme <span class="arr" aria-hidden="true">→</span></a>
         </div>
       </div>
@@ -123,7 +119,7 @@
     <div class="band upc" aria-label="Próximos casos">
       <div class="upc-head label">Próximos casos</div>
       <div class="row"><h4>Relay</h4><p>Revisión de documentos de construcción con IA que muestra sus fuentes, antes de responder un RFI.</p><span class="label">2027</span></div>
-          <div class="row"><h4>Campo</h4><p>Lotes de vivienda post-desastre, de la visita de campo a listos para construir, a partir de los más de 1.000 lotes que verifiqué.</p><span class="label">2027</span>
+      <div class="row"><h4>Campo</h4><p>Lotes de vivienda post-desastre, de la visita de campo a listos para construir, a partir de los más de 1.000 lotes que verifiqué.</p><span class="label">2027</span></div>
     </div>
 
     <div class="band shead">
@@ -131,21 +127,10 @@
     </div>
     <div class="band">
       <div class="bg-row"><h3>Estaciones de la Línea 1 del Metro de Bogotá</h3><p>Arquitecta (apoyo profesional), 2024–2025. Punto único de contacto con el equipo de revisión de WSP India, trabajando por completo en inglés. Organicé la documentación de estaciones entre equipos para que cada uno trabajara con la versión vigente aprobada.</p><a class="label org" href="https://www.wsp.com/" target="_blank" rel="noopener" aria-label="WSP, sitio oficial, abre en una pestaña nueva">WSP<span aria-hidden="true"> ↗</span></a></div>
-        <div class="bg-row"><h3>BRT integrado con la Línea 1 del metro</h3><p>Arquitecta (apoyo profesional), 2021–2023. Desarrollo del diseño de 13 estaciones de BRT integradas con el metro, además de documentación y respuestas formales a entidades de control.</p><a class="label org" href="https://www.wsp.com/" target="_blank" rel="noopener" aria-label="WSP, sitio oficial, abre en una pestaña nueva">WSP<span aria-hidden="true"> ↗</span></a></div>
-        <div class="bg-row"><h3>Aeropuerto Internacional de Chinchero, Perú</h3><p>Arquitecta III, 2023–2024. Planeé y hice seguimiento de tareas entre disciplinas y dirigí las reuniones interdisciplinarias de avance.</p><a class="label org" href="https://aecom.com/" target="_blank" rel="noopener" aria-label="AECOM, sitio oficial, abre en una pestaña nueva">AECOM<span aria-hidden="true"> ↗</span></a></div>
-        <div class="bg-row"><h3>Reconstrucción de vivienda en Providencia</h3><p>Arquitecta junior, 2019–2021. Verifiqué más de 1.000 lotes de vivienda después del huracán Iota, hice planos de implantación, codiseñé detalles con la comunidad raizal y capacité al personal de campo.</p><a class="label org" href="https://www.contextourbano.com.co/" target="_blank" rel="noopener" aria-label="Contexto Urbano, sitio oficial, abre en una pestaña nueva">Contexto Urbano<span aria-hidden="true"> ↗</span></a></div>
-        <div class="bg-row"><h3>Proyecto de oficinas institucionales, Bogotá</h3><p>Planos y modelos en Revit (LOD 350) para un proyecto de 212.000 m².</p><a class="label org" href="https://www.contextourbano.com.co/" target="_blank" rel="noopener" aria-label="Contexto Urbano, sitio oficial, abre en una pestaña nueva">Contexto Urbano<span aria-hidden="true"> ↗</span></a>
-    </div>
-
-    <div class="band shead" id="playground">
-      <div class="cells"><div class="cell span-4"><h2><span class="label idx">[03]</span> <span class="pl pl-title" aria-hidden="true"><i>P</i><i>l</i><i>a</i><i>y</i><i>g</i><i>r</i><i>o</i><i>u</i><i>n</i><i>d</i></span><span class="vh">Playground</span></h2><span class="label">Dribbble</span></div></div>
-    </div>
-    <div class="band play">
-      <div class="cells">
-        <div class="cell span-2"><span class="big">Humor en la idea, rigor en el detalle</span></div>
-        <div class="cell"><p>Otro registro, distinto al de los casos: retos de Daily UI y productos inventados, algunos graciosos a propósito. Muestra el otro lado de mi trabajo: oficio de UI, color, tipografía y textos.</p></div>
-        <div class="cell"><span class="label">dribbble.com/valentina-angel</span><a class="btn solid" href="https://dribbble.com/valentina-angel" target="_blank" rel="noopener">Ver en Dribbble <span class="arr" aria-hidden="true">↗</span></a></div>
-      </div>
+      <div class="bg-row"><h3>Aeropuerto Internacional de Chinchero, Perú</h3><p>Arquitecta III, 2023–2024. Planeé e hice seguimiento a las tareas entre disciplinas, y facilité las reuniones interdisciplinarias de avance.</p><a class="label org" href="https://aecom.com/" target="_blank" rel="noopener" aria-label="AECOM, sitio oficial, abre en una pestaña nueva">AECOM<span aria-hidden="true"> ↗</span></a></div>
+      <div class="bg-row"><h3>BRT integrado con la Línea 1 del metro</h3><p>Arquitecta (apoyo profesional), 2021–2023. Desarrollo del diseño de 13 estaciones de BRT integradas con el metro, además de documentación y respuestas formales a entidades de control.</p><a class="label org" href="https://www.wsp.com/" target="_blank" rel="noopener" aria-label="WSP, sitio oficial, abre en una pestaña nueva">WSP<span aria-hidden="true"> ↗</span></a></div>
+      <div class="bg-row"><h3>Reconstrucción de vivienda en Providencia</h3><p>Arquitecta junior, 2019–2021. Verifiqué más de 1.000 lotes de vivienda después del huracán Iota, hice planos de implantación, codiseñé detalles con la comunidad raizal y capacité al personal de campo.</p><a class="label org" href="https://www.contextourbano.com.co/" target="_blank" rel="noopener" aria-label="Contexto Urbano, sitio oficial, abre en una pestaña nueva">Contexto Urbano<span aria-hidden="true"> ↗</span></a></div>
+      <div class="bg-row"><h3>Proyecto de oficinas institucionales, Bogotá</h3><p>Planos y modelos en Revit (LOD 350) para un proyecto de 212.000 m².</p><a class="label org" href="https://www.contextourbano.com.co/" target="_blank" rel="noopener" aria-label="Contexto Urbano, sitio oficial, abre en una pestaña nueva">Contexto Urbano<span aria-hidden="true"> ↗</span></a></div>
     </div>
   </section>
 
@@ -163,11 +148,11 @@
           <p><a class="lnk" href="#flowops">Leer el caso FlowOps →</a></p>
         </div></div>
         <div class="cell"><div class="facts">
-        <div><dt class="label">Ubicación</dt><dd>Bogotá, Colombia <span>· disponible en remoto</span></dd></div>
+        <div><dt class="label">En remoto desde</dt><dd>Bogotá, Colombia <span>· UTC−5</span></dd><dd>Madrid, España <span>· UTC+1</span></dd></div>
         <div><dt class="label">Formación</dt><dd>Arquitectura <span>· Universidad de los Andes, 2018</span></dd><dd>Opción en Diseño Industrial y de Producto <span>· Universidad de los Andes, 2016</span></dd><dd>Diplomado en Innovación y Diseño de Producto Digital (UX/UI) <span>· Universidad de los Andes, 2024</span></dd><dd>Programa UX/UI Designer <span>· Uxcel, 2026</span></dd></div>
         <div><dt class="label">Idiomas</dt><dd class="bul">Español <span>· nativo</span></dd><dd class="bul">Inglés <span>· bilingüe</span></dd><dd class="bul">Francés <span>· competencia profesional limitada</span></dd></div>
         <div><dt class="label">Herramientas</dt><dd>Figma; prototipos en código con HTML, CSS y JavaScript, construidos con IA</dd></div>
-        <div><dt class="label">Busco</dt><dd>Roles de Product Designer en B2B y sistemas complejos</dd></div>
+        <div><dt class="label">Busco</dt><dd>Roles de Product Designer, en remoto</dd></div>
         <div><dt class="label">Hoja de vida · PDF</dt><dd><a class="lnk" href="../Valentina-Angel-Vega-CV-Disenadora-UX-Product-Designer_2026_ES.pdf" hreflang="es" lang="es" target="_blank" rel="noopener">Descargar en español</a></dd><dd><a class="lnk" href="../Valentina-Angel-Vega-CV-UX-Product-Designer_2026.pdf" hreflang="en" lang="en" target="_blank" rel="noopener">Download in English</a></dd></div>
         </div></div>
       </div>
@@ -204,7 +189,7 @@
 
         <!-- Resumen -->
         <div id="flowops-summary" class="block" style="margin-top:0">
-          <h1>Priorizar la reparación de ascensores según el acceso sin escalones que quita cada falla</h1>
+          <h1>Priorizar la reparación de ascensores según el acceso que cada falla les quita a las personas con movilidad reducida</h1>
           <p class="cs-intro">En el metro de Nueva York, un solo ascensor dañado puede cerrar una estación a cualquiera que no pueda usar las escaleras. Elegir cuál arreglar primero exige saber cuántos pasajeros pierden el acceso, no qué tan seguido falla un ascensor.</p>
 
           <figure class="shot proto" data-proto="../flowops/index.html" data-title="Prototipo de FlowOps">
@@ -218,8 +203,8 @@
             <figcaption><span>Prototipo en vivo (v8), en inglés. Un turno simulado sobre datos reales de la MTA. Mejor en computador.</span><span class="proto-actions"><button type="button" class="proto-full">Pantalla completa <span aria-hidden="true">⤢</span></button><a href="../flowops/index.html" target="_blank" rel="noopener">Abrir en otra pestaña <span aria-hidden="true">↗</span></a></span></figcaption>
           </figure>
 
-          <p><strong>Un ascensor sin respaldo en una ruta crítica puede cerrar una estación entera a las personas con movilidad reducida.</strong> Después de seis años diseñando infraestructura de transporte, me pregunté cómo decide un centro de control del metro qué ascensor arreglar primero. La MTA de Nueva York publica los datos que necesitaba para averiguarlo.</p>
-          <p><strong>Diseñé FlowOps, una herramienta de decisión que ordena las fallas de ascensores según el acceso sin escalones que cada una quita.</strong> El operador aprueba o cambia el orden.</p>
+          <p><strong>Un ascensor sin respaldo en una ruta crítica puede cerrar una estación entera a las personas con movilidad reducida (PMR).</strong> Después de seis años diseñando infraestructura de transporte, me pregunté cómo decide un centro de control del metro qué ascensor arreglar primero. La MTA de Nueva York publica los datos que necesitaba para averiguarlo.</p>
+          <p><strong>Diseñé FlowOps, una herramienta de decisión que ordena las fallas de ascensores según cuánto acceso les quita cada una a las PMR.</strong> El operador aprueba o cambia el orden.</p>
 
           <dl class="facts-row">
             <div><dt class="label">Rol</dt><dd>Product Designer de principio a fin (en solitario)</dd></div>
@@ -233,7 +218,7 @@
         <section id="flowops-glance" class="block">
           <h2>De un vistazo</h2>
           <div class="ps">
-            <div><h3 class="ps-h">Problema</h3><p>Ordenar las fallas según qué tan seguido falla un ascensor señala la estación equivocada. Lexington Av/63 St tiene 252 fallas, pero cada ascensor ahí tiene respaldo. Una falla nunca corta su ruta sin escalones.</p></div>
+            <div><h3 class="ps-h">Problema</h3><p>Ordenar las fallas según qué tan seguido falla un ascensor señala la estación equivocada. Lexington Av/63 St tiene 252 fallas, pero cada ascensor ahí tiene respaldo. Una falla nunca corta el acceso PMR.</p></div>
             <div><h3 class="ps-h">Solución</h3><p>Una cola ordenada según cuántos pasajeros diarios dependen del acceso perdido. Cada prioridad se explica sola, las personas atrapadas van primero y el operador aprueba cada prioridad antes de que se convierta en orden de trabajo.</p></div>
           </div>
           <h3 class="h-sub">Lo que cambia el modelo</h3>
@@ -246,7 +231,7 @@
         <!-- El contexto -->
         <section id="flowops-scene" class="block">
           <h2>El conteo de fallas señala la estación equivocada.</h2>
-          <p>La disponibilidad subió al <strong>98 %</strong> en 2025, pero las fallas llegaron a <strong>17,7 al día</strong>, la cifra más alta en 11 años y un 26 % por encima del promedio de 2015–2019. Y <strong>9 de cada 10 estaciones accesibles</strong> pueden perder su ruta sin escalones, completa o en un sentido, cuando falla un solo ascensor.</p>
+          <p>La disponibilidad subió al <strong>98 %</strong> en 2025, pero las fallas llegaron a <strong>17,7 al día</strong>, la cifra más alta en 11 años y un 26 % por encima del promedio de 2015–2019. Y <strong>9 de cada 10 estaciones accesibles</strong> pueden perder su acceso PMR, completo o en un sentido, cuando falla un solo ascensor.</p>
           <p>Revisé tres fuentes:</p>
           <ul class="sources">
             <li><strong>Datos abiertos de la MTA</strong> (4 conjuntos de datos, 386 ascensores, 7.052 fallas en 12 meses). Las fallas señalan la estación equivocada: la que más falla nunca pierde el acceso.</li>
@@ -261,7 +246,7 @@
           <h2>La prioridad mide quién pierde el acceso, y luego se explica sola.</h2>
           <p>Los equipos de mantenimiento priorizan el trabajo por <strong>consecuencia × probabilidad</strong>. Aquí la falla ya ocurrió, así que mido la consecuencia: <strong>cuántos pasajeros diarios dependen del acceso perdido.</strong> Una pérdida en ambos sentidos cuenta completa. En un solo sentido cuenta la mitad. La probabilidad solo importa para estaciones a una falla de perder el acceso.</p>
           <figure class="shot">
-            <button type="button" class="zoom" aria-label="Ampliar imagen: dos clasificaciones de las mismas estaciones"><img src="../img/flowops/model-two-rankings.webp" width="2000" height="1229" loading="lazy" alt="Dos clasificaciones de las mismas estaciones: por fallas, Lexington Av/63 St es primera y 161 St–Yankee Stadium es 97.ª; por acceso sin escalones perdido, Yankee Stadium es primera y Lexington queda al fondo"></button>
+            <button type="button" class="zoom" aria-label="Ampliar imagen: dos clasificaciones de las mismas estaciones"><img src="../img/flowops/model-two-rankings.webp" width="2000" height="1229" loading="lazy" alt="Dos clasificaciones de las mismas estaciones: por fallas, Lexington Av/63 St es primera y 161 St–Yankee Stadium es 97.ª; por acceso PMR perdido, Yankee Stadium es primera y Lexington queda al fondo"></button>
             <figcaption>Las mismas estaciones, clasificadas de dos formas. La que más falla no pierde acceso, porque cada ascensor ahí tiene respaldo.</figcaption>
           </figure>
           <div class="table-wrap">
@@ -269,7 +254,7 @@
               <thead><tr><th scope="col">Prioridad</th><th scope="col">Cuándo</th><th scope="col">Cómo se muestra en la interfaz</th></tr></thead>
               <tbody>
                 <tr><th scope="row"><span class="dot dot-u"></span>Urgente</th><td data-label="Cuándo">Hay personas atrapadas. Siempre por encima de la cola.</td><td data-label="Cómo se muestra en la interfaz">Punto rojo, plazo para confirmar</td></tr>
-                <tr><th scope="row"><span class="dot dot-h"></span>Alta</th><td data-label="Cuándo">Pierden acceso 20.000 entradas diarias o más</td><td data-label="Cómo se muestra en la interfaz">1.660 o más entradas sin escalones estimadas al día</td></tr>
+                <tr><th scope="row"><span class="dot dot-h"></span>Alta</th><td data-label="Cuándo">Pierden acceso 20.000 entradas diarias o más</td><td data-label="Cómo se muestra en la interfaz">1.660 o más entradas PMR estimadas al día</td></tr>
                 <tr><th scope="row"><span class="dot dot-m"></span>Media</th><td data-label="Cuándo">De 5.000 a 20.000, o sin acceso en ambos sentidos</td><td data-label="Cómo se muestra en la interfaz">De 415 a 1.660</td></tr>
                 <tr><th scope="row"><span class="dot dot-l"></span>Baja</th><td data-label="Cuándo">Menos de 5.000 en un sentido, o a una falla de perder el acceso</td><td data-label="Cómo se muestra en la interfaz">Menos de 415, o Sin ascensor de respaldo</td></tr>
               </tbody>
@@ -277,7 +262,7 @@
           </div>
 
           <h3 class="h-sub">La decisión difícil: ¿el tipo de pérdida, o a cuántas personas afecta?</h3>
-          <p><strong>Franklin Av (C)</strong> pierde todo su acceso sin escalones con una sola falla, y unas <strong>1.950</strong> personas entran ahí cada día. <strong>Times Sq–42 St (1 2 3)</strong> pierde un sentido, que concentra unas <strong>23.000</strong> entradas al día.</p>
+          <p><strong>Franklin Av (C)</strong> pierde todo su acceso PMR con una sola falla, y unas <strong>1.950</strong> personas entran ahí cada día. <strong>Times Sq–42 St (1 2 3)</strong> pierde un sentido, que concentra unas <strong>23.000</strong> entradas al día.</p>
           <ul class="options">
             <li><span class="opt">A</span><div><strong>Decide el tipo de pérdida.</strong> Franklin va primero, pero el número de estaciones en Alta cambia cada día.</div></li>
             <li><span class="opt">B</span><div><strong>Decide el impacto.</strong> Times Sq va primero, y una estación pequeña sin acceso puede hundirse al fondo.</div></li>
@@ -290,8 +275,8 @@
           </ul>
           <p>La recurrencia y la antigüedad se muestran como razones, nunca como puntos. Las fallas de más de 5 días pasan al responsable de accesibilidad.</p>
 
-          <h3 class="h-sub">Las entradas sin escalones son una estimaciÃ³n</h3>
-          <p>La clasificación usa el total de entradas. La interfaz muestra <strong>entradas sin escalones estimadas</strong>: el 8,3 % de los pasajeros, la proporción de neoyorquinos con dificultad para caminar (ACS 2024). Puede quedarse corta o pasarse, por eso se rotula como estimación y nunca cambia el orden.</p>
+          <h3 class="h-sub">Las entradas PMR son una estimación</h3>
+          <p>La clasificación usa el total de entradas. La interfaz muestra <strong>entradas PMR estimadas</strong>: el 8,3 % de los pasajeros, la proporción de neoyorquinos con dificultad para caminar (ACS 2024). Puede quedarse corta o pasarse, por eso se rotula como estimación y nunca cambia el orden.</p>
         </section>
 
         <!-- Decisión de producto -->
@@ -314,12 +299,12 @@
 
           <h3 class="h-view">Network status: ¿qué necesita una decisión ahora mismo?</h3>
           <figure class="shot shot-narrow">
-            <button type="button" class="zoom" aria-label="Ampliar imagen: contadores y cola"><img src="../img/flowops/01-kpis-and-queue.webp" width="1368" height="1184" loading="lazy" alt="Los cuatro contadores sobre la cola, y la cola ordenada por acceso sin escalones perdido, con marcadores numerados"></button>
+            <button type="button" class="zoom" aria-label="Ampliar imagen: contadores y cola"><img src="../img/flowops/01-kpis-and-queue.webp" width="1368" height="1184" loading="lazy" alt="Los cuatro contadores sobre la cola, y la cola ordenada por acceso PMR perdido, con marcadores numerados"></button>
           </figure>
           <ol class="marks">
             <li><span><strong>Personas atrapadas</strong> es el único contador que se pone en rojo.</span></li>
             <li><span><strong>La prioridad se lee como palabra:</strong> Urgente, Alta, Media, Baja.</span></li>
-            <li><span><strong>Acceso</strong> dice qué sentidos perdieron la ruta sin escalones.</span></li>
+            <li><span><strong>Acceso</strong> dice qué sentidos perdieron el acceso PMR.</span></li>
           </ol>
           <p class="takeaway">Cada contador dice qué incluye, y su número coincide con las filas de la cola.</p>
 
@@ -329,7 +314,7 @@
           </figure>
           <ol class="marks">
             <li><span><strong>Qué se perdió:</strong> ambos sentidos en 74 St–Broadway.</span></li>
-            <li><span><strong>Quién depende de eso:</strong> 1.746 entradas sin escalones estimadas al día.</span></li>
+            <li><span><strong>Quién depende de eso:</strong> 1.746 entradas PMR estimadas al día.</span></li>
             <li><span><strong>La regla:</strong> Alta empieza en 1.660.</span></li>
           </ol>
 
@@ -382,11 +367,11 @@
           </figure>
           <p>El turno se compara con el mismo día de la semana durante el último mes, así una mala mañana se lee frente a una línea base. El registro reconstruye cualquier decisión: qué se sugirió, qué se aprobó y cuándo.</p>
 
-          <h3 class="h-view">Network analysis: ¿dónde pierde la red más acceso sin escalones?</h3>
+          <h3 class="h-view">Network analysis: ¿dónde pierde la red más acceso PMR?</h3>
           <figure class="shot">
             <button type="button" class="zoom" aria-label="Ampliar imagen: vista Network analysis"><img src="../img/flowops/09-network-analysis.webp" width="2000" height="1206" loading="lazy" alt="La vista Network analysis: un año de pérdida, su concentración, y fallas frente a acceso perdido"></button>
           </figure>
-          <p>De aquí salió el modelo. En un año se perdieron 1,9 millones de entradas sin escalones estimadas, el 34 % en solo 5 estaciones. 8 de las 20 estaciones que más pierden no están entre las 50 que más fallan.</p>
+          <p>De aquí salió el modelo. En un año se perdieron 1,9 millones de entradas PMR estimadas, el 34 % en solo 5 estaciones. 8 de las 20 estaciones que más pierden no están entre las 50 que más fallan.</p>
 
           <h4 class="h-feat">Por qué la estación con más pérdida del año no está en la cola del turno</h4>
           <p>La pérdida de 161 St–Yankee Stadium viene de abril a agosto de 2026 (de septiembre a marzo no hay datos), sobre todo julio y agosto, al 0 % durante la sustitución. Las fallas de más de 5 días salen de la cola del turno y pasan al responsable de accesibilidad. El turno y el año miden cosas distintas.</p>
@@ -446,7 +431,7 @@
           <ul class="plain">
             <li>El tiempo desde que se abre la pantalla hasta la primera prioridad aprobada</li>
             <li>Cuántas prioridades cambian, y por qué</li>
-            <li>Las horas que una estación pasa sin acceso sin escalones</li>
+            <li>Las horas que una estación pasa sin acceso PMR</li>
           </ul>
         </section>
 
@@ -462,19 +447,63 @@
     </div>
   </section>
 
+  <!-- PLAYGROUND -->
+  <section class="view" id="view-playground" aria-label="Playground" hidden>
+    <div class="band phead">
+      <div class="cells"><div class="cell span-4"><span class="label"><span class="idx">[00]</span> Dribbble</span><h1><span class="pl pl-title" aria-hidden="true"><i>P</i><i>l</i><i>a</i><i>y</i><i>g</i><i>r</i><i>o</i><i>u</i><i>n</i><i>d</i></span><span class="vh">Playground</span></h1></div></div>
+      <div class="pl-bar" aria-hidden="true"></div>
+    </div>
+    <div class="band play">
+      <div class="cells">
+        <div class="cell span-2"><h2 class="big">Humor en la idea, rigor en el detalle</h2></div>
+        <div class="cell"><p>Otro registro, distinto al de los casos: retos de Daily UI y productos inventados, algunos graciosos a propósito. Muestra el otro lado de mi trabajo: oficio de UI, color, tipografía y textos.</p></div>
+        <div class="cell"><p class="pg-note">Aquí hay seis. En mi perfil de Dribbble hay más.</p><a class="btn solid" href="https://dribbble.com/valentina-angel" target="_blank" rel="noopener">Ver todos en Dribbble <span class="arr" aria-hidden="true">↗</span></a></div>
+      </div>
+    </div>
+    <div class="band pg-grid" aria-label="Proyectos">
+      <article class="pg-card">
+        <div class="pg-img"><img src="../img/playground/01-soft-boiled.webp" width="1200" height="900" loading="lazy" alt="Portada de Soft Boiled: dos pantallas de celular del temporizador para huevos sobre fondo amarillo"></div>
+        <div class="pg-body"><span class="label">App móvil</span><h3><a href="https://dribbble.com/shots/27898335-Daily-UI-014-Countdown-timer" target="_blank" rel="noopener">Soft Boiled<span class="vh">, en Dribbble (se abre en una pestaña nueva)</span></a></h3><p>Temporizador para huevos que calcula el tiempo exacto de cocción según tu altitud, el tamaño del huevo y si viene de la nevera. Eliges el punto de la yema y la app hace la física.</p><span class="label go" aria-hidden="true">Ver en Dribbble <span class="arr">↗</span></span></div>
+      </article>
+      <article class="pg-card">
+        <div class="pg-img"><img src="../img/playground/02-flight-404.webp" width="1200" height="900" loading="lazy" alt="Portada de Flight 404: una página de error de aerolínea con forma de tablero de salidas sobre fondo oscuro"></div>
+        <div class="pg-body"><span class="label">Web</span><h3><a href="https://dribbble.com/shots/27887615-Daily-UI-008-404-Page" target="_blank" rel="noopener">Flight 404<span class="vh">, en Dribbble (se abre en una pestaña nueva)</span></a></h3><p>Página de error 404 de una aerolínea ficticia, convertida en un tablero de salidas. El vuelo a la página que buscabas está cancelado, y cada fila te lleva a un destino que sí existe.</p><span class="label go" aria-hidden="true">Ver en Dribbble <span class="arr">↗</span></span></div>
+      </article>
+      <article class="pg-card">
+        <div class="pg-img"><img src="../img/playground/03-hollowell.webp" width="1200" height="900" loading="lazy" alt="Portada de Hollowell: pantalla de ajustes de una casa embrujada en una tablet sobre fondo rojo oscuro"></div>
+        <div class="pg-body"><span class="label">Tablet</span><h3><a href="https://dribbble.com/shots/27887548-Daily-UI-007-Settings" target="_blank" rel="noopener">Hollowell<span class="vh">, en Dribbble (se abre en una pestaña nueva)</span></a></h3><p>Panel de ajustes de una casa embrujada, diseñado como una app de hogar inteligente. Controlas los crujidos, las apariciones por noche y el frío del pasillo, con un modo invitados para que la casa se porte bien.</p><span class="label go" aria-hidden="true">Ver en Dribbble <span class="arr">↗</span></span></div>
+      </article>
+      <article class="pg-card">
+        <div class="pg-img"><img src="../img/playground/04-hours-of-your-life.webp" width="1200" height="900" loading="lazy" alt="Portada de Hours of Your Life: dos pantallas de celular de la calculadora con un personaje cansado sobre fondo verde menta"></div>
+        <div class="pg-body"><span class="label">App móvil</span><h3><a href="https://dribbble.com/shots/27884763-Daily-UI-004-Calculator" target="_blank" rel="noopener">Hours of Your Life<span class="vh">, en Dribbble (se abre en una pestaña nueva)</span></a></h3><p>Calculadora que convierte cualquier precio en horas de tu trabajo. Escribes cuánto cuesta algo y te dice cuánto de tu vida laboral vale, con un personaje que se agota más entre más caro es.</p><span class="label go" aria-hidden="true">Ver en Dribbble <span class="arr">↗</span></span></div>
+      </article>
+      <article class="pg-card">
+        <div class="pg-img"><img src="../img/playground/05-split.webp" width="1200" height="900" loading="lazy" alt="Portada de Split: dos pantallas de celular de la app para dividir cuentas sobre fondo azul"></div>
+        <div class="pg-body"><span class="label">App móvil</span><h3><a href="https://dribbble.com/shots/27884919-UI-Playground-Split-bills" target="_blank" rel="noopener">Split<span class="vh">, en Dribbble (se abre en una pestaña nueva)</span></a></h3><p>App para dividir cuentas entre amigos. Reparte en partes iguales, por lo que pidió cada uno o con montos a medida, y muestra de un vistazo quién ya pagó y quién debe todavía.</p><span class="label go" aria-hidden="true">Ver en Dribbble <span class="arr">↗</span></span></div>
+      </article>
+      <article class="pg-card">
+        <div class="pg-img"><img src="../img/playground/06-sugar-static.webp" width="1200" height="900" loading="lazy" alt="Portada de Sugar Static: landing page rosa de un álbum con un disco de vinilo sobre fondo ciruela"></div>
+        <div class="pg-body"><span class="label">Web</span><h3><a href="https://dribbble.com/shots/27882411-Daily-UI-003-Landing-page" target="_blank" rel="noopener">Sugar Static<span class="vh">, en Dribbble (se abre en una pestaña nueva)</span></a></h3><p>Landing page del álbum debut de una banda ficticia de música disco. En una sola página puedes escuchar las canciones, reservar el vinilo rosa de edición limitada y ver las fechas de la gira.</p><span class="label go" aria-hidden="true">Ver en Dribbble <span class="arr">↗</span></span></div>
+      </article>
+    </div>
+    <div class="band pg-more">
+      <div class="cells"><div class="cell span-3"><h2 class="big">Más proyectos de Playground en Dribbble</h2></div><div class="cell"><a class="btn solid" href="https://dribbble.com/valentina-angel" target="_blank" rel="noopener">Visitar mi perfil <span class="arr" aria-hidden="true">↗</span></a></div></div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="view" id="view-contact" aria-label="Contacto" hidden>
     <div class="band phead">
       <div class="cells">
         <div class="cell span-3"><span class="label"><span class="idx">[00]</span> Contacto</span><h1>Hablemos</h1></div>
-        <div class="cell"><div class="status label"><i aria-hidden="true"></i><b>Disponible</b> · Remoto desde Bogotá</div></div>
+        <div class="cell"><div class="status label"><i aria-hidden="true"></i><b>Disponible</b> · Remoto desde Bogotá o Madrid</div></div>
       </div>
     </div>
     <div class="band">
       <div class="cells">
-        <div class="cell span-3"><div class="prose"><p>Busco un rol de Product Designer, en remoto desde Bogotá.</p><p>Si tu equipo está contratando, escríbeme. Me interesa saber qué están construyendo.</p></div></div>
+        <div class="cell span-3"><div class="prose"><p>Busco un rol de Product Designer, en remoto desde Bogotá o Madrid.</p><p>Si tu equipo está contratando, escríbeme. Me interesa saber qué están construyendo.</p></div></div>
         <div class="cell"><dl class="facts">
-        <div><dt class="label">Ubicación</dt><dd>Bogotá, Colombia · UTC−5</dd></div>
+        <div><dt class="label">En remoto desde</dt><dd>Bogotá, Colombia <span>· UTC−5</span></dd><dd>Madrid, España <span>· UTC+1</span></dd></div>
         <div><dt class="label">Idiomas</dt><dd class="bul">Español <span>· nativo</span></dd><dd class="bul">Inglés <span>· bilingüe</span></dd><dd class="bul">Francés <span>· competencia profesional limitada</span></dd></div>
         <div><dt class="label">Hoja de vida · PDF</dt><dd><a class="lnk" href="../Valentina-Angel-Vega-CV-Disenadora-UX-Product-Designer_2026_ES.pdf" hreflang="es" lang="es" target="_blank" rel="noopener">Descargar en español</a></dd><dd><a class="lnk" href="../Valentina-Angel-Vega-CV-UX-Product-Designer_2026.pdf" hreflang="en" lang="en" target="_blank" rel="noopener">Download in English</a></dd></div>
       </dl></div>
@@ -504,7 +533,7 @@
 
 <footer class="band foot" id="site-footer">
   <div class="cells">
-    <div class="cell"><span class="name">Valentina Angel</span><p class="say">Abierta a roles de Product Designer, en remoto desde Bogotá.</p></div>
+    <div class="cell"><span class="name">Valentina Angel</span><p class="say">Abierta a roles de Product Designer, en remoto desde Bogotá o Madrid.</p></div>
     <div class="cell"><span class="label">Contacto</span><a href="mailto:valentinaangelvega@gmail.com">valentinaangelvega@gmail.com</a><a href="https://www.linkedin.com/in/valentina-angel-vega/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
     <div class="cell"><span class="label">Hoja de vida · En otros sitios</span><a href="../Valentina-Angel-Vega-CV-Disenadora-UX-Product-Designer_2026_ES.pdf" hreflang="es" lang="es" target="_blank" rel="noopener">CV · Español (PDF)</a><a href="../Valentina-Angel-Vega-CV-UX-Product-Designer_2026.pdf" hreflang="en" lang="en" target="_blank" rel="noopener">CV · English (PDF)</a><a href="https://dribbble.com/valentina-angel" target="_blank" rel="noopener">Dribbble ↗</a></div>
     <div class="cell"><span class="label">© 2026</span><a href="#home" class="label">Volver arriba ↑</a></div>
@@ -516,6 +545,6 @@
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden><button type="button" id="lb-close">Cerrar</button></div>
 <div class="toast" id="toast" role="status" aria-live="polite" hidden>Correo copiado</div>
 
-<script src="../assets/site.js"></script>
+<script src="../assets/site.js?v=20261118d"></script>
 </body>
 </html>
