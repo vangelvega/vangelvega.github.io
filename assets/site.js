@@ -1,5 +1,5 @@
 (function(){
-  var views=["home","about","flowops","contact"];
+  var views=["home","about","playground","flowops","contact"];
   var links=[].slice.call(document.querySelectorAll(".toc a"));
   function mark(id){links.forEach(function(a){a.classList.toggle("on",a.dataset.to===id)})}
   function offset(){var t=document.querySelector(".top");return (t?t.getBoundingClientRect().bottom:52)+24}
@@ -23,7 +23,7 @@
   var ticking=false;
   window.addEventListener("scroll",function(){if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;spy()})}},{passive:true});
 
-  // Playground title: ink by default. It takes its colours and hops on hover, and for a moment on arrival from the tab
+  // Playground title: ink by default. It takes its colours and hops on hover, and for a moment on arrival at the page
   var plTitle=document.querySelector(".pl-title"), plTimer;
   function hopTitle(arrive){
     if(!plTitle)return;
@@ -36,22 +36,20 @@
   function show(){
     var h=(location.hash||"#home").slice(1), v=h, target=null, prev=current;
     if(h.indexOf("flowops-")===0){v="flowops";target=h}
-    // #playground is a section of the home view with its own tab in the bar
-    var navKey=null;if(h==="playground"){v="home";target="playground";navKey="playground"}
     if(views.indexOf(v)<0)v="home";
     current=v;
     var view=document.getElementById("view-"+v);
     views.forEach(function(n){document.getElementById("view-"+n).hidden=(n!==v)});
     document.getElementById("site-footer").hidden=(v==="contact");
     document.querySelectorAll("[data-nav]").forEach(function(a){
-      var on=navKey?a.dataset.nav===navKey:(a.dataset.nav===v||(v==="flowops"&&a.dataset.nav==="home"));
+      var on=a.dataset.nav===v||(v==="flowops"&&a.dataset.nav==="home");
       if(on)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");
     });
     // Name the view in the tab, so history and screen readers know where they are
     document.title=v==="home"?baseTitle:view.getAttribute("aria-label")+" · Valentina Angel";
     // A direct link to a section can land before images and fonts settle: jump again once the page has loaded
     if(target&&document.readyState!=="complete")window.addEventListener("load",function(){if(location.hash.slice(1)===h)jumpTo(target)},{once:true});
-    if(target){requestAnimationFrame(function(){jumpTo(target);if(navKey){var ph=document.querySelector("#playground h2");if(ph){ph.setAttribute("tabindex","-1");ph.focus({preventScroll:true})}hopTitle(true)}})}
+    if(target){requestAnimationFrame(function(){jumpTo(target)})}
     else if(v==="home"&&prev==="flowops"){
       // Coming back from the case lands on its card, not the top of the page
       // Scroll synchronously so a view transition snapshots the right position
@@ -59,6 +57,8 @@
       window.scrollTo(0,Math.max(0,c.getBoundingClientRect().top+window.pageYOffset-offset()));var g=c.querySelector(".go");if(g)g.focus({preventScroll:true});
     }
     else{window.scrollTo(0,0);lockY=null;if(v==="flowops")mark("flowops-summary")}
+    // Arriving at Playground wakes its title up for a moment
+    if(v==="playground"&&prev!=="playground")hopTitle(true);
     // After the first load, move focus to the new view's heading so assistive tech announces the change
     if(prev!==null&&prev!==v&&!target&&!(v==="home"&&prev==="flowops")){
       var hd=view.querySelector("h1");if(hd){hd.setAttribute("tabindex","-1");hd.focus({preventScroll:true})}
@@ -74,8 +74,6 @@
     else show();
   });
   show();
-  // Clicking the Playground tab again while already on #playground still scrolls to it
-  document.querySelectorAll(".playlink").forEach(function(a){a.addEventListener("click",function(e){if(location.hash==="#playground"){e.preventDefault();jumpTo("playground");hopTitle(true)}})});
 
   // Skip link: move focus to the visible view without touching the hash router
   var skip=document.querySelector(".skip");
@@ -123,7 +121,8 @@
   var root=document.documentElement, mq=window.matchMedia("(prefers-color-scheme: dark)");
   function theme(){return root.getAttribute("data-theme")||(mq.matches?"dark":"light")}
   document.querySelectorAll("[data-theme-toggle]").forEach(function(btn){
-    function sync(){var next=theme()==="dark"?"light":"dark";btn.setAttribute("aria-label",btn.dataset["label"+next.charAt(0).toUpperCase()+next.slice(1)])}
+    // The button is a switch: on means dark
+    function sync(){btn.setAttribute("aria-checked",theme()==="dark"?"true":"false")}
     btn.addEventListener("click",function(){
       var next=theme()==="dark"?"light":"dark";
       root.setAttribute("data-theme",next);
@@ -187,6 +186,16 @@
     });
     window.addEventListener("resize",fit);
     if("ResizeObserver" in window)new ResizeObserver(fit).observe(view);
+  });
+
+  // Language menu: opens under its button; closes on choice, Escape, an outside click or when focus leaves
+  document.querySelectorAll("[data-lang]").forEach(function(box){
+    var btn=box.querySelector(".lang-btn"), menu=box.querySelector(".lang-menu");
+    function set(open){menu.hidden=!open;btn.setAttribute("aria-expanded",open?"true":"false")}
+    btn.addEventListener("click",function(){var open=menu.hidden;set(open);if(open){var a=menu.querySelector("a");if(a)a.focus({preventScroll:true})}});
+    document.addEventListener("click",function(e){if(!box.contains(e.target))set(false)});
+    box.addEventListener("keydown",function(e){if(e.key==="Escape"&&!menu.hidden){set(false);btn.focus()}});
+    box.addEventListener("focusout",function(e){if(e.relatedTarget&&!box.contains(e.relatedTarget))set(false)});
   });
 
   // Language switch keeps the current view and section
