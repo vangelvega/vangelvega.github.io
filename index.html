@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=20261117">
+<link rel="stylesheet" href="assets/site.css?v=20261118d">
 <link rel="alternate" hreflang="en" href="./">
 <link rel="alternate" hreflang="es" href="es/">
 <script>try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
@@ -32,19 +32,24 @@
 <div class="frame">
 
 <header class="top band">
-  <div class="cells">
-    <div class="cell"><a class="brand" href="#home" aria-label="Valentina Angel, home"><span class="mark" aria-hidden="true">VA</span><span>Valentina Angel</span></a></div>
-    <nav aria-label="Main" style="display:contents">
-      <div class="cell nav"><a href="#home" data-nav="home">Work</a></div>
-      <div class="cell nav"><a href="#about" data-nav="about">About</a></div>
-      <div class="cell nav"><a class="playlink" href="#playground" data-nav="playground" aria-label="Playground"><span class="pl" aria-hidden="true"><i>P</i><i>l</i><i>a</i><i>y</i><i>g</i><i>r</i><i>o</i><i>u</i><i>n</i><i>d</i></span></a></div>
-      <div class="cell nav"><a href="#contact" data-nav="contact">Contact</a></div>
+  <div class="bar">
+    <a class="brand" href="#home" aria-label="Valentina Angel, home"><span class="mark" aria-hidden="true">VA</span><span>Valentina Angel</span></a>
+    <nav class="tabs" aria-label="Main">
+      <a href="#home" data-nav="home">Work</a>
+      <a href="#about" data-nav="about">About</a>
+      <a class="playlink" href="#playground" data-nav="playground" aria-label="Playground"><span class="pl" aria-hidden="true"><i>P</i><i>l</i><i>a</i><i>y</i><i>g</i><i>r</i><i>o</i><i>u</i><i>n</i><i>d</i></span></a>
+      <a href="#contact" data-nav="contact">Contact</a>
     </nav>
-    <div class="cell pref"><a href="es/" hreflang="es" lang="es" data-lang-link aria-label="ES, ver en español">ES</a></div>
-    <div class="cell pref"><button type="button" data-theme-toggle data-label-dark="Switch to dark mode" data-label-light="Switch to light mode" aria-label="Switch to dark mode">
-      <svg class="i-moon" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M15.5 12.6A6.5 6.5 0 0 1 7.4 4.5a6.5 6.5 0 1 0 8.1 8.1Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
-      <svg class="i-sun" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><circle cx="10" cy="10" r="3.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 1.5v2.2M10 16.3v2.2M1.5 10h2.2M16.3 10h2.2M4 4l1.6 1.6M14.4 14.4 16 16M4 16l1.6-1.6M14.4 5.6 16 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-    </button></div>
+    <div class="prefs">
+      <div class="lang" data-lang>
+        <button type="button" class="lang-btn" aria-expanded="false" aria-controls="lang-menu" aria-label="Language: English"><svg class="globe" viewBox="0 0 20 20" width="15" height="15" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10" cy="10" r="7.6"/><path d="M2.4 10h15.2M10 2.4c2.4 2.2 3.6 4.7 3.6 7.6s-1.2 5.4-3.6 7.6c-2.4-2.2-3.6-4.7-3.6-7.6S7.600 4.600 10 2.400Z"/></g></svg><span>EN</span><svg class="chev" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2.500 4.500 6 8l3.500-3.500" fill="none" stroke="currentColor" stroke-width="1.500" stroke-linecap="square"/></svg></button>
+        <ul class="lang-menu" id="lang-menu" hidden>
+          <li><span class="cur" aria-current="true"><b>EN</b><span class="name">English</span><svg class="check" viewBox="0 0 14 14" width="12" height="12" aria-hidden="true"><path d="M2.500 7.400 5.600 10.500 11.500 4" fill="none" stroke="currentColor" stroke-width="1.600" stroke-linecap="square"/></svg></span></li>
+          <li><a href="es/" hreflang="es" lang="es" data-lang-link><b>ES</b><span class="name">Español</span></a></li>
+        </ul>
+      </div>
+      <button type="button" class="theme" role="switch" aria-checked="false" data-theme-toggle aria-label="Dark mode"><span class="th" aria-hidden="true"><span class="th-thumb"></span><svg class="ic-sun" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><circle cx="10" cy="10" r="3.500" fill="none" stroke="currentColor" stroke-width="1.500"/><path d="M10 1.500v2.200M10 16.300v2.200M1.500 10h2.200M16.300 10h2.200M4 4l1.600 1.600M14.400 14.400 16 16M4 16l1.600-1.600M14.400 5.600 16 4" stroke="currentColor" stroke-width="1.500" stroke-linecap="round"/></svg><svg class="ic-moon" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M15.500 12.600A6.500 6.500 0 0 1 7.400 4.500a6.500 6.500 0 1 0 8.100 8.100Z" fill="none" stroke="currentColor" stroke-width="1.500" stroke-linejoin="round"/></svg></span></button>
+    </div>
   </div>
 </header>
 
@@ -52,21 +57,12 @@
 
   <!-- HOME -->
   <section class="view" id="view-home" aria-label="Work">
-    <div class="band strip">
-      <div class="cells">
-        <div class="cell label"><span class="idx">[00]</span> Index</div>
-        <div class="cell label">Portfolio · 2026</div>
-        <div class="cell label">B2B · Complex systems</div>
-        <div class="cell label">Bogotá · Remote</div>
-      </div>
-    </div>
-
     <div class="band hero">
       <div class="cells">
         <div class="cell span-3 big"><h1>Product Designer</h1><p class="tagline">I design software that turns <em>dense data into decisions</em>.</p></div>
         <div class="cell side">
-          <p class="lede">Six years on infrastructure projects (metro stations, BRT and an international airport) taught me how the people who build infrastructure decide. Now I design the software they decide with.</p>
-          <div class="status label"><i aria-hidden="true"></i><b>Open to work</b> · Remote from Bogotá</div>
+          <p class="lede">Six years on infrastructure projects (metro stations, BRT and an international airport) taught me how teams decide when the information is dense and a mistake is expensive. Now I design software for decisions like those.</p>
+          <div class="status label"><i aria-hidden="true"></i><b>Open to work</b> · Remote from Bogotá or Madrid</div>
           <a class="btn solid" href="#contact">Get in touch <span class="arr" aria-hidden="true">→</span></a>
         </div>
       </div>
@@ -123,7 +119,7 @@
     <div class="band upc" aria-label="Upcoming case studies">
       <div class="upc-head label">Upcoming case studies</div>
       <div class="row"><h4>Relay</h4><p>Construction document review with AI that shows its sources, before answering an RFI.</p><span class="label">2027</span></div>
-          <div class="row"><h4>Campo</h4><p>Post-disaster housing plots, from the field visit to ready-to-build, drawing on the 1,000+ plots I verified.</p><span class="label">2027</span>
+      <div class="row"><h4>Campo</h4><p>Post-disaster housing plots, from the field visit to ready-to-build, drawing on the 1,000+ plots I verified.</p><span class="label">2027</span></div>
     </div>
 
     <div class="band shead">
@@ -131,21 +127,10 @@
     </div>
     <div class="band">
       <div class="bg-row"><h3>Bogotá Metro Line 1 stations</h3><p>Architect (Professional Support), 2024–2025. Single point of contact for WSP India's review team, working fully in English. Organized station documentation across teams so each one worked from the current approved version.</p><a class="label org" href="https://www.wsp.com/" target="_blank" rel="noopener" aria-label="WSP, official site, opens in a new tab">WSP<span aria-hidden="true"> ↗</span></a></div>
-        <div class="bg-row"><h3>BRT integrated with Metro Line 1</h3><p>Architect (Professional Support), 2021–2023. Design development of 13 BRT stations integrated with the metro, plus documentation and formal responses to oversight entities.</p><a class="label org" href="https://www.wsp.com/" target="_blank" rel="noopener" aria-label="WSP, official site, opens in a new tab">WSP<span aria-hidden="true"> ↗</span></a></div>
-        <div class="bg-row"><h3>Chinchero International Airport, Peru</h3><p>Architect III, 2023–2024. Planned and tracked tasks across disciplines and ran the interdisciplinary progress meetings.</p><a class="label org" href="https://aecom.com/" target="_blank" rel="noopener" aria-label="AECOM, official site, opens in a new tab">AECOM<span aria-hidden="true"> ↗</span></a></div>
-        <div class="bg-row"><h3>Housing reconstruction in Providencia</h3><p>Junior Architect, 2019–2021. Verified 1,000+ housing plots after Hurricane Iota, produced site plans, co-designed details with the Raizal community and trained field staff.</p><a class="label org" href="https://www.contextourbano.com.co/" target="_blank" rel="noopener" aria-label="Contexto Urbano, official site, opens in a new tab">Contexto Urbano<span aria-hidden="true"> ↗</span></a></div>
-        <div class="bg-row"><h3>Institutional office project, Bogotá</h3><p>Drawings and Revit models (LOD 350) for a 212,000 m² project.</p><a class="label org" href="https://www.contextourbano.com.co/" target="_blank" rel="noopener" aria-label="Contexto Urbano, official site, opens in a new tab">Contexto Urbano<span aria-hidden="true"> ↗</span></a>
-    </div>
-
-    <div class="band shead" id="playground">
-      <div class="cells"><div class="cell span-4"><h2><span class="label idx">[03]</span> <span class="pl pl-title" aria-hidden="true"><i>P</i><i>l</i><i>a</i><i>y</i><i>g</i><i>r</i><i>o</i><i>u</i><i>n</i><i>d</i></span><span class="vh">Playground</span></h2><span class="label">Dribbble</span></div></div>
-    </div>
-    <div class="band play">
-      <div class="cells">
-        <div class="cell span-2"><span class="big">Playful UI, serious craft</span></div>
-        <div class="cell"><p>A different register from the case studies: Daily UI challenges and invented products, some of them funny on purpose. It shows the other side of my work: UI craft, color, typography and words.</p></div>
-        <div class="cell"><span class="label">dribbble.com/valentina-angel</span><a class="btn solid" href="https://dribbble.com/valentina-angel" target="_blank" rel="noopener">View on Dribbble <span class="arr" aria-hidden="true">↗</span></a></div>
-      </div>
+      <div class="bg-row"><h3>Chinchero International Airport, Peru</h3><p>Architect III, 2023–2024. Planned and tracked tasks across disciplines and facilitated the interdisciplinary progress meetings.</p><a class="label org" href="https://aecom.com/" target="_blank" rel="noopener" aria-label="AECOM, official site, opens in a new tab">AECOM<span aria-hidden="true"> ↗</span></a></div>
+      <div class="bg-row"><h3>BRT integrated with Metro Line 1</h3><p>Architect (Professional Support), 2021–2023. Design development of 13 BRT stations integrated with the metro, plus documentation and formal responses to oversight entities.</p><a class="label org" href="https://www.wsp.com/" target="_blank" rel="noopener" aria-label="WSP, official site, opens in a new tab">WSP<span aria-hidden="true"> ↗</span></a></div>
+      <div class="bg-row"><h3>Housing reconstruction in Providencia</h3><p>Junior Architect, 2019–2021. Verified 1,000+ housing plots after Hurricane Iota, produced site plans, co-designed details with the Raizal community and trained field staff.</p><a class="label org" href="https://www.contextourbano.com.co/" target="_blank" rel="noopener" aria-label="Contexto Urbano, official site, opens in a new tab">Contexto Urbano<span aria-hidden="true"> ↗</span></a></div>
+      <div class="bg-row"><h3>Institutional office project, Bogotá</h3><p>Drawings and Revit models (LOD 350) for a 212,000 m² project.</p><a class="label org" href="https://www.contextourbano.com.co/" target="_blank" rel="noopener" aria-label="Contexto Urbano, official site, opens in a new tab">Contexto Urbano<span aria-hidden="true"> ↗</span></a></div>
     </div>
   </section>
 
@@ -163,11 +148,11 @@
           <p><a class="lnk" href="#flowops">Read the FlowOps case study →</a></p>
         </div></div>
         <div class="cell"><div class="facts">
-        <div><dt class="label">Based in</dt><dd>Bogotá, Colombia <span>· open to remote</span></dd></div>
+        <div><dt class="label">Remote from</dt><dd>Bogotá, Colombia <span>· UTC−5</span></dd><dd>Madrid, Spain <span>· UTC+1</span></dd></div>
         <div><dt class="label">Education</dt><dd>Bachelor of Architecture <span>· Universidad de los Andes, 2018</span></dd><dd>Minor in Industrial and Product Design <span>· Universidad de los Andes, 2016</span></dd><dd>Diploma in Digital Product Innovation and Design (UX/UI) <span>· Universidad de los Andes, 2024</span></dd><dd>UX/UI Designer program <span>· Uxcel, 2026</span></dd></div>
         <div><dt class="label">Languages</dt><dd class="bul">Spanish <span>· native</span></dd><dd class="bul">English <span>· bilingual</span></dd><dd class="bul">French <span>· limited working proficiency</span></dd></div>
         <div><dt class="label">Tools</dt><dd>Figma; coded prototypes in HTML, CSS and JavaScript, built with AI</dd></div>
-        <div><dt class="label">Looking for</dt><dd>Product Designer roles in B2B and complex systems</dd></div>
+        <div><dt class="label">Looking for</dt><dd>Product Designer roles, remote</dd></div>
         <div><dt class="label">Résumé · PDF</dt><dd><a class="lnk" href="Valentina-Angel-Vega-CV-UX-Product-Designer_2026.pdf" hreflang="en" lang="en" target="_blank" rel="noopener">Download in English</a></dd><dd><a class="lnk" href="Valentina-Angel-Vega-CV-Disenadora-UX-Product-Designer_2026_ES.pdf" hreflang="es" lang="es" target="_blank" rel="noopener">Descargar en español</a></dd></div>
         </div></div>
       </div>
@@ -462,19 +447,63 @@
     </div>
   </section>
 
+  <!-- PLAYGROUND -->
+  <section class="view" id="view-playground" aria-label="Playground" hidden>
+    <div class="band phead">
+      <div class="cells"><div class="cell span-4"><span class="label"><span class="idx">[00]</span> Dribbble</span><h1><span class="pl pl-title" aria-hidden="true"><i>P</i><i>l</i><i>a</i><i>y</i><i>g</i><i>r</i><i>o</i><i>u</i><i>n</i><i>d</i></span><span class="vh">Playground</span></h1></div></div>
+      <div class="pl-bar" aria-hidden="true"></div>
+    </div>
+    <div class="band play">
+      <div class="cells">
+        <div class="cell span-2"><h2 class="big">Playful UI, serious craft</h2></div>
+        <div class="cell"><p>A different register from the case studies: Daily UI challenges and invented products, some of them funny on purpose. It shows the other side of my work: UI craft, color, typography and words.</p></div>
+        <div class="cell"><p class="pg-note">These are six. There are more on my Dribbble profile.</p><a class="btn solid" href="https://dribbble.com/valentina-angel" target="_blank" rel="noopener">See all on Dribbble <span class="arr" aria-hidden="true">↗</span></a></div>
+      </div>
+    </div>
+    <div class="band pg-grid" aria-label="Projects">
+      <article class="pg-card">
+        <div class="pg-img"><img src="img/playground/01-soft-boiled.webp" width="1200" height="900" loading="lazy" alt="Soft Boiled cover: two phone screens of the egg timer on a yellow background"></div>
+        <div class="pg-body"><span class="label">Mobile app</span><h3><a href="https://dribbble.com/shots/27898335-Daily-UI-014-Countdown-timer" target="_blank" rel="noopener">Soft Boiled<span class="vh">, on Dribbble (opens in a new tab)</span></a></h3><p>An egg timer that works out the exact boil time from your altitude, the egg’s size and whether it comes from the fridge. Pick how you want the yolk and the app does the physics.</p><span class="label go" aria-hidden="true">View on Dribbble <span class="arr">↗</span></span></div>
+      </article>
+      <article class="pg-card">
+        <div class="pg-img"><img src="img/playground/02-flight-404.webp" width="1200" height="900" loading="lazy" alt="Flight 404 cover: an airline error page laid out as a departures board on a dark background"></div>
+        <div class="pg-body"><span class="label">Web</span><h3><a href="https://dribbble.com/shots/27887615-Daily-UI-008-404-Page" target="_blank" rel="noopener">Flight 404<span class="vh">, on Dribbble (opens in a new tab)</span></a></h3><p>A 404 page for a fictional airline, turned into a departures board. The flight to the page you wanted is cancelled, and every row takes you somewhere that does exist.</p><span class="label go" aria-hidden="true">View on Dribbble <span class="arr">↗</span></span></div>
+      </article>
+      <article class="pg-card">
+        <div class="pg-img"><img src="img/playground/03-hollowell.webp" width="1200" height="900" loading="lazy" alt="Hollowell cover: a tablet settings screen for a haunted house on a dark red background"></div>
+        <div class="pg-body"><span class="label">Tablet</span><h3><a href="https://dribbble.com/shots/27887548-Daily-UI-007-Settings" target="_blank" rel="noopener">Hollowell<span class="vh">, on Dribbble (opens in a new tab)</span></a></h3><p>The settings panel of a haunted house, designed like a smart home app. You control the creaks, the apparitions per night and the hallway chill, with a guest mode so the house behaves.</p><span class="label go" aria-hidden="true">View on Dribbble <span class="arr">↗</span></span></div>
+      </article>
+      <article class="pg-card">
+        <div class="pg-img"><img src="img/playground/04-hours-of-your-life.webp" width="1200" height="900" loading="lazy" alt="Hours of Your Life cover: two phone screens of the calculator with a tired character on a mint background"></div>
+        <div class="pg-body"><span class="label">Mobile app</span><h3><a href="https://dribbble.com/shots/27884763-Daily-UI-004-Calculator" target="_blank" rel="noopener">Hours of Your Life<span class="vh">, on Dribbble (opens in a new tab)</span></a></h3><p>A calculator that turns any price into hours of your work. Type what something costs and it tells you how much of your working life it is worth, with a character that gets more tired as the price goes up.</p><span class="label go" aria-hidden="true">View on Dribbble <span class="arr">↗</span></span></div>
+      </article>
+      <article class="pg-card">
+        <div class="pg-img"><img src="img/playground/05-split.webp" width="1200" height="900" loading="lazy" alt="Split cover: two phone screens of the bill-splitting app on a blue background"></div>
+        <div class="pg-body"><span class="label">Mobile app</span><h3><a href="https://dribbble.com/shots/27884919-UI-Playground-Split-bills" target="_blank" rel="noopener">Split<span class="vh">, on Dribbble (opens in a new tab)</span></a></h3><p>An app for splitting bills with friends. Split equally, by what each person ordered or with custom amounts, and see at a glance who has paid and who still owes.</p><span class="label go" aria-hidden="true">View on Dribbble <span class="arr">↗</span></span></div>
+      </article>
+      <article class="pg-card">
+        <div class="pg-img"><img src="img/playground/06-sugar-static.webp" width="1200" height="900" loading="lazy" alt="Sugar Static cover: a pink album landing page with a vinyl record on a dark plum background"></div>
+        <div class="pg-body"><span class="label">Web</span><h3><a href="https://dribbble.com/shots/27882411-Daily-UI-003-Landing-page" target="_blank" rel="noopener">Sugar Static<span class="vh">, on Dribbble (opens in a new tab)</span></a></h3><p>A landing page for the debut album of a fictional disco band. On one page you can play the tracks, pre-order the limited pink vinyl and check the tour dates.</p><span class="label go" aria-hidden="true">View on Dribbble <span class="arr">↗</span></span></div>
+      </article>
+    </div>
+    <div class="band pg-more">
+      <div class="cells"><div class="cell span-3"><h2 class="big">More Playground projects on Dribbble</h2></div><div class="cell"><a class="btn solid" href="https://dribbble.com/valentina-angel" target="_blank" rel="noopener">Visit my profile <span class="arr" aria-hidden="true">↗</span></a></div></div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="view" id="view-contact" aria-label="Contact" hidden>
     <div class="band phead">
       <div class="cells">
         <div class="cell span-3"><span class="label"><span class="idx">[00]</span> Contact</span><h1>Let's talk</h1></div>
-        <div class="cell"><div class="status label"><i aria-hidden="true"></i><b>Open to work</b> · Remote from Bogotá</div></div>
+        <div class="cell"><div class="status label"><i aria-hidden="true"></i><b>Open to work</b> · Remote from Bogotá or Madrid</div></div>
       </div>
     </div>
     <div class="band">
       <div class="cells">
-        <div class="cell span-3"><div class="prose"><p>I'm looking for a Product Designer role, remote from Bogotá.</p><p>If your team is hiring, email me. I'd like to hear about what you're building.</p></div></div>
+        <div class="cell span-3"><div class="prose"><p>I'm looking for a Product Designer role, remote from Bogotá or Madrid.</p><p>If your team is hiring, email me. I'd like to hear about what you're building.</p></div></div>
         <div class="cell"><dl class="facts">
-        <div><dt class="label">Based in</dt><dd>Bogotá, Colombia · UTC−5</dd></div>
+        <div><dt class="label">Remote from</dt><dd>Bogotá, Colombia <span>· UTC−5</span></dd><dd>Madrid, Spain <span>· UTC+1</span></dd></div>
         <div><dt class="label">Languages</dt><dd class="bul">Spanish <span>· native</span></dd><dd class="bul">English <span>· bilingual</span></dd><dd class="bul">French <span>· limited working proficiency</span></dd></div>
         <div><dt class="label">Résumé · PDF</dt><dd><a class="lnk" href="Valentina-Angel-Vega-CV-UX-Product-Designer_2026.pdf" hreflang="en" lang="en" target="_blank" rel="noopener">Download in English</a></dd><dd><a class="lnk" href="Valentina-Angel-Vega-CV-Disenadora-UX-Product-Designer_2026_ES.pdf" hreflang="es" lang="es" target="_blank" rel="noopener">Descargar en español</a></dd></div>
       </dl></div>
@@ -504,7 +533,7 @@
 
 <footer class="band foot" id="site-footer">
   <div class="cells">
-    <div class="cell"><span class="name">Valentina Angel</span><p class="say">Open to Product Designer roles, remote from Bogotá.</p></div>
+    <div class="cell"><span class="name">Valentina Angel</span><p class="say">Open to Product Designer roles, remote from Bogotá or Madrid.</p></div>
     <div class="cell"><span class="label">Contact</span><a href="mailto:valentinaangelvega@gmail.com">valentinaangelvega@gmail.com</a><a href="https://www.linkedin.com/in/valentina-angel-vega/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
     <div class="cell"><span class="label">Résumé · Elsewhere</span><a href="Valentina-Angel-Vega-CV-UX-Product-Designer_2026.pdf" hreflang="en" lang="en" target="_blank" rel="noopener">CV · English (PDF)</a><a href="Valentina-Angel-Vega-CV-Disenadora-UX-Product-Designer_2026_ES.pdf" hreflang="es" lang="es" target="_blank" rel="noopener">CV · Español (PDF)</a><a href="https://dribbble.com/valentina-angel" target="_blank" rel="noopener">Dribbble ↗</a></div>
     <div class="cell"><span class="label">© 2026</span><a href="#home" class="label">Back to top ↑</a></div>
@@ -516,6 +545,6 @@
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image" hidden><button type="button" id="lb-close">Close</button></div>
 <div class="toast" id="toast" role="status" aria-live="polite" hidden>Email copied</div>
 
-<script src="assets/site.js?v=20261117"></script>
+<script src="assets/site.js?v=20261118d"></script>
 </body>
 </html>
